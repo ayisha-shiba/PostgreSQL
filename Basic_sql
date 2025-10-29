@@ -1,0 +1,9 @@
+CREATE DATABASE school;
+\c school;
+
+CREATE TABLE students (
+    student_id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    grade CHAR(2)
+);
