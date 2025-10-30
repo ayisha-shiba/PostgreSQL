@@ -1,0 +1,11 @@
+postgres=> CREATE DATABASE studentdb;
+CREATE DATABASE
+postgres=> \c studentdb
+You are now connected to database "studentdb" as user "shiba".
+studentdb=> CREATE TABLE students (
+studentdb(> id INT PRIMARY KEY,
+studentdb(> name VARCHAR(50),
+studentdb(> age INT,
+studentdb(> grade VARCHAR(10)
+studentdb(> );
+CREATE TABLE

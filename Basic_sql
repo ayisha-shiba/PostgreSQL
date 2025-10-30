@@ -8,3 +8,5 @@ CREATE TABLE students (
 );
     -- to delete
 DROP DATABASE school;
+\d for viewing table
+
