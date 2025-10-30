@@ -9,3 +9,128 @@ studentdb(> age INT,
 studentdb(> grade VARCHAR(10)
 studentdb(> );
 CREATE TABLE
+person-# ADD COLUMN date_of_birth DATE;
+ALTER TABLE
+person=#
+person=# INSERT INTO person_details (first_name, last_name, gender, date_of_birth)
+person-# VALUES ('annie', 'smith', 'female', DATE '1998-09-06');
+INSERT 0 1
+person=#
+person=# SELECT * FROM person_details;
+ id | first_name | last_name | age | gender | email | date_of_birth ----+------------+-----------+-----+--------+-------+---------------  1 | annie      | smith     |     | female |       | 1998-09-06
+(1 row)
+
+
+person=# INSERT INTO person_details
+person-# \r
+Query buffer reset (cleared).
+person=# INSERT INTO person_details(first_name,last_name,gender,date_of_birth,email)
+person-#
+person-# VALUES('jake','jones','MALE',DATE '2005-09-31',jake@gmail.com);
+ERROR:  date/time field value out of range: "2005-09-31"
+LINE 2: VALUES('jake','jones','MALE',DATE '2005-09-31',jake@gmail.co...
+                                          ^
+person=# SELECT* FROM person_details
+person-# SELECT* FROM person_details;
+ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT* FROM person_details;
+        ^
+person=# SELECT * FROM person_details;
+ id | first_name | last_name | age | gender | email | date_of_birth ----+------------+-----------+-----+--------+-------+---------------  1 | annie      | smith     |     | female |       | 1998-09-06
+(1 row)
+
+
+person=# INSERT INTO person_details (first_name, last_name, gender, date_of_birth, email)
+person-# VALUES ('jake', 'jones', 'MALE', DATE '2005-09-30', 'jake@gmail.com');
+INSERT 0 1
+person=# SELECT * FROM person_details;
+ id | first_name | last_name | age | gender |     email      | date_of_birth
+----+------------+-----------+-----+--------+----------------+---------------
+  1 | annie      | smith     |     | female |                | 1998-09-06
+  2 | jake       | jones     |     | MALE   | jake@gmail.com | 2005-09-30
+(2 rows)
+
+
+person=# SELECT first_name,last_name FROM  person_details
+person-# ;
+ first_name | last_name
+------------+-----------
+ annie      | smith
+ jake       | jones
+(2 rows)
+
+
+person=# SELECT first_name, email FROM  person_details;
+ first_name |     email
+------------+----------------
+ annie      |
+ jake       | jake@gmail.com
+(2 rows)
+
+
+person=# SELECT email FROM  person_details;
+     email
+----------------
+
+ jake@gmail.com
+(2 rows)
+
+
+person=# SELECT first_name FROM person ORDER BY DESC
+person-# ;
+ERROR:  syntax error at or near "DESC"
+LINE 1: SELECT first_name FROM person ORDER BY DESC
+                                               ^
+person=# SELECT first_name
+person-# FROM person
+person-# ORDER BY first_name DESC;
+ERROR:  relation "person" does not exist
+LINE 2: FROM person
+             ^
+person=# SELECT first_name FROM person_details ORDER BY first_name DESC;
+ first_name
+------------
+ jake
+ annie
+(2 rows)
+
+
+person=# SELECT first_name FROM person_details ORDER BY first_name;
+ first_name
+------------
+ annie
+ jake
+(2 rows)
+
+
+person=# SELECT first_name FROM person_details
+person-# ;
+ first_name
+------------
+ annie
+ jake
+(2 rows)
+
+
+person=# SELECT 1=1
+person-# ;
+ ?column?
+----------
+ t
+(1 row)
+
+
+person=# SELECT 1>=5
+person-# ;
+ ?column?
+----------
+ f
+(1 row)
+
+
+person=# SELECT 1<>1
+person-# ;
+ ?column?
+----------
+ f
+(1 row)
