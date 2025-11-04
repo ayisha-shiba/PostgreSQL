@@ -1,0 +1,4 @@
+postgres=# DELETE FROM person_details WHERE gender NOT IN ('Male','Female');
+DELETE 99
+postgres=# ALTER TABLE person_details ADD CONSTRAINT gender_constraints CHECK (gender = 'Female' OR gender = 'Male');
+ALTER TABLE
