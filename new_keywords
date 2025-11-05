@@ -2,3 +2,28 @@ postgres=# DELETE FROM person_details WHERE gender NOT IN ('Male','Female');
 DELETE 99
 postgres=# ALTER TABLE person_details ADD CONSTRAINT gender_constraints CHECK (gender = 'Female' OR gender = 'Male');
 ALTER TABLE
+postgres=# UPDATE person_details SET email = 'juddz@gmail.com' WHERE id = 998;
+UPDATE 1
+postgres=# SELECT * FROM person_details where id = 998;
+ id  | first_name | last_name |      email      | gender | country_of_birth
+-----+------------+-----------+-----------------+--------+------------------
+ 998 | Judd       | Puddan    | juddz@gmail.com | Male   | Afghanistan
+(1 row)
+
+
+postgres=# \l
+                                                            List of databases
+   Name    |  Owner   | Encoding | Locale Provider |      Collate       |       Ctype        | Locale | ICU Rules |   Access privileges
+-----------+----------+----------+-----------------+--------------------+--------------------+--------+-----------+-----------------------
+ person    | shiba    | UTF8     | libc            | English_India.1252 | English_India.1252 |        |           |
+ postgres  | postgres | UTF8     | libc            | English_India.1252 | English_India.1252 |        |           |
+ studentdb | shiba    | UTF8     | libc            | English_India.1252 | English_India.1252 |        |           |
+ template0 | postgres | UTF8     | libc            | English_India.1252 | English_India.1252 |        |           | =c/postgres          +
+           |          |          |                 |                    |                    |        |           | postgres=CTc/postgres
+ template1 | postgres | UTF8     | libc            | English_India.1252 | English_India.1252 |        |           | =c/postgres          +
+           |          |          |                 |                    |                    |        |           | postgres=CTc/postgres
+ test      | postgres | UTF8     | libc            | English_India.1252 | English_India.1252 |        |           |
+(6 rows)
+
+
+postgres=#
