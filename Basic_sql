@@ -10,3 +10,27 @@ CREATE TABLE students (
 DROP DATABASE school;
 \d for viewing table
 
+---------
+CREATE TABLE city_details (
+    id SERIAL PRIMARY KEY,
+    city_name VARCHAR(50)
+);
+
+INSERT INTO city_details (city_name)
+VALUES
+('Kozhikode'),
+('Kochi'),
+('Malappuram'),
+('Kannur');
+
+ALTER TABLE person_details
+ADD COLUMN city_id INT;
+
+UPDATE person_details SET city_id = 1 WHERE id = 1;
+UPDATE person_details SET city_id = 2 WHERE id = 2;
+UPDATE person_details SET city_id = 3 WHERE id = 3;
+
+SELECT person_details.name, city_details.city_name
+FROM person_details
+INNER JOIN city_details
+ON person_details.city_id = city_details.id;
