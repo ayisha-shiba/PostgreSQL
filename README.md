@@ -6,7 +6,8 @@ This repository contains my notes and practice files as I learn SQL and PostgreS
 - DBMS and RDBMS concepts  
 -SQL Commands in PostgreSQL
 -joins
--
+-Foreign key Primary key
+
 -
 -
 -
