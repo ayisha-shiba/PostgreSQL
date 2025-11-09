@@ -25,5 +25,37 @@ postgres=# \l
  test      | postgres | UTF8     | libc            | English_India.1252 | English_India.1252 |        |           |
 (6 rows)
 
-
+                                                    ^
+postgres=# ALTER TABLE person_details
+postgres-# ADD CONSTRAINT fk FOREIGN KEY (id) REFERENCES car(id);
+ERROR:  insert or update on table "person_details" violates foreign key constraint "fk"
+DETAIL:  Key (id)=(101) is not present in table "car".
 postgres=#
+postgres=# CREATE TABLE departments (
+postgres(#     dept_id SERIAL PRIMARY KEY,
+postgres(#     dept_name VARCHAR(50) NOT NULL
+postgres(# );
+CREATE TABLE
+postgres=# INSERT INTO departments(dept_name) VALUES
+postgres-# ('HR'),
+postgres-# ('Finance'),
+postgres-# ('IT'),
+postgres-# ('Marketing');
+INSERT 0 4
+postgres=# CREATE TABLE employees (
+postgres(#     emp_id SERIAL PRIMARY KEY,
+postgres(#     first_name VARCHAR(50) NOT NULL,
+postgres(#     last_name VARCHAR(50),
+postgres(#     age INT,
+postgres(#     dept_id INT,
+postgres(#     salary NUMERIC(10,2),
+postgres(#     FOREIGN KEY (dept_id) REFERENCES departments(dept_id)
+postgres(# );
+CREATE TABLE
+postgres=# INSERT INTO employees(first_name, last_name, age, dept_id, salary) VALUES
+postgres-# ('Ayisha', 'Shiba', 20, 3, 50000),
+postgres-# ('John', 'Doe', 28, 1, 45000),
+postgres-# ('Jane', 'Smith', 32, 2, 60000),
+postgres-# ('Mike', 'Brown', 25, 3, 55000);
+INSERT 0 4
+postgres=# select
