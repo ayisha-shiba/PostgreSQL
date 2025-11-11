@@ -59,3 +59,18 @@ postgres-# ('Jane', 'Smith', 32, 2, 60000),
 postgres-# ('Mike', 'Brown', 25, 3, 55000);
 INSERT 0 4
 postgres=# select
+Stored Procedure — SQL Theory
+
+A Stored Procedure is a precompiled block of SQL statements stored inside the database. It performs a specific task like inserting, updating, or fetching data when executed.
+
+1. Definition
+
+A stored procedure is created once and can be executed many times using a simple call.
+It is similar to a function in programming.
+
+2. Syntax (General form)
+CREATE PROCEDURE procedure_name
+AS
+BEGIN
+    -- SQL statements
+END;
