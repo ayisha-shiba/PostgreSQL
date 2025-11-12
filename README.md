@@ -6,7 +6,7 @@ This repository contains my notes and practice files as I learn SQL and PostgreS
 - DBMS and RDBMS concepts
 - DML, DDL, DC
 -SQL Commands in PostgreSQL
--joins
+-inner joins
 -Foreign key Primary key
 -Stored Procedure 
 -3-Schema architecture
