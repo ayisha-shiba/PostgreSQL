@@ -7,11 +7,13 @@ This repository contains my notes and practice files as I learn SQL and PostgreS
 - DML, DDL, DC
 -SQL Commands in PostgreSQL
 -inner joins
--Foreign key Primary key
+-Foreign key
+-Primary key
+-Indexing
 -Stored Procedure 
 -3-Schema architecture
 -Aggregate functions
-
+-Scalar functions
 
 ## Tools Used
 - PostgreSQL  
