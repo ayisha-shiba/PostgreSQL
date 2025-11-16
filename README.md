@@ -4,7 +4,7 @@ This repository contains my notes and practice files as I learn SQL and PostgreS
 
 ## Topics Covered
 - DBMS and RDBMS concepts
-- DML, DDL, DC
+- DML, DDL, DCL
 -SQL Commands in PostgreSQL
 -inner joins
 -Foreign key
