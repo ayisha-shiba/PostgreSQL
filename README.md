@@ -7,6 +7,7 @@ This repository contains my notes and practice files as I learn SQL and PostgreS
 - DML, DDL, DCL
 -SQL Commands in PostgreSQL
 -inner joins
+-left joins
 -Foreign key
 -Primary key
 -Indexing
