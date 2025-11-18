@@ -15,7 +15,7 @@ This repository contains my notes and practice files as I learn SQL and PostgreS
 -3-Schema architecture
 -Aggregate functions
 -Scalar functions
-
+-group by
 ## Tools Used
 - PostgreSQL  
 - VS Code  
